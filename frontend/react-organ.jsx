@@ -1,9 +1,7 @@
-const Dispatcher = require('./dispatcher/dispatcher');
-const Note = require('./util/note');
-const getKey = require('./constants/tones');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const Organ = require('./components/organ');
 
 document.addEventListener("DOMContentLoaded", () => {
-  window.dp = Dispatcher;
-  window.Note = Note;
-  window.gk = getKey;
+  ReactDOM.render(<Organ />, document.getElementById("root")); 
 });

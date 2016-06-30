@@ -1,26 +1,27 @@
 const Store = require('flux/utils').Store;
 const AppDispatcher = require('../dispatcher/dispatcher');
+const OrganConstants = require('../constants/organ_constants');
 const KeyStore = new Store(AppDispatcher);
 
 let _keys = [];
 
-KeyStore.all = () => return _keys.slice();
+KeyStore.all = () => _keys.slice(0);
 
 KeyStore.__onDispatch = (payload) => {
   switch(payload.actionType) {
     case OrganConstants.KEY_PRESSED:
       KeyStore._addKey(payload.note);
       break;
-    case OrganConstants.KEY_RELEASED;
+    case OrganConstants.KEY_RELEASED:
       KeyStore._removeKey(payload.note);
       break;
-    case OrganConstants.GROUP_UPDATE;
+    case OrganConstants.GROUP_UPDATE:
       KeyStore._groupUpdate(payload.notes);
       break;
   }
 };
 
-KeyStore._addKey = (key) => {
+KeyStore._addKey = function(key) {
   const idx = _keys.indexOf(key);
   if (idx === -1) {
     _keys.push(key);
@@ -28,12 +29,12 @@ KeyStore._addKey = (key) => {
   }
 };
 
-KeyStore._groupdUpdate = (keys) => {
+KeyStore._groupUpdate = function(keys) {
   _keys = keys.slice();
   this.__emitChange();
 };
 
-KeyStore._removeKey = (key) => {
+KeyStore._removeKey = function(key) {
   const idx = _keys.indexOf(key);
   if (idx >= 0) {
     _keys.splice(idx, 1);

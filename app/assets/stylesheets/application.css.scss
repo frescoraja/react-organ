@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$key-width: (100% / 13);
+
+.keys {
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+  border-left: none;
+}
+
+.note-key {
+  width: $key-width;
+  height: 200px;
+  display: inline-block;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.sharp {
+  z-index: 10;
+  height: 120px;
+  background-color: black;
+  color: white;
+}
+
+.pressed {
+  background-color: red;
+}
+
