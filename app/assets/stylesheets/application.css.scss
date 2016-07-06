@@ -17,28 +17,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$key-width: (100% / 13);
+$key-width: (100% / 8);
+$key-height: 100%;
+$sharp-key-height: $key-height * 0.7;
+$sharp-key-width: $key-width * 0.6;
 
 .keys {
-  width: 80%;
-  margin: auto;
+  width: 80vw;
+  height: 50vh;
+  min-width: 500px;
+  margin: 50px auto;
   border: 1px solid black;
   border-left: none;
 }
 
 .note-key {
   width: $key-width;
-  height: 200px;
+  height: 100%;
   display: inline-block;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
 
 .sharp {
+  height: $sharp-key-height;
+  width: $sharp-key-width;
   z-index: 10;
-  height: 120px;
   background-color: black;
   color: white;
+  margin-left: -$sharp-key-width / 2;
+  margin-right: -$sharp-key-width / 2;
 }
 
 .pressed {
