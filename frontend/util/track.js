@@ -32,10 +32,9 @@ Track.prototype = {
   play() {
     if (this.interval) { return; }
 
-    let currentNote = 0;
+    let currentNote = 0, delta;
     const playBackStartTime = Date.now();
     const roll = this.attributes.roll;
-    let delta;
 
     this.interval = setInterval(() => {
       if (currentNote < roll.length) {

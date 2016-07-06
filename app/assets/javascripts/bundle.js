@@ -37639,10 +37639,10 @@
 	      return;
 	    }
 	
-	    var currentNote = 0;
+	    var currentNote = 0,
+	        delta = void 0;
 	    var playBackStartTime = Date.now();
 	    var roll = this.attributes.roll;
-	    var delta = void 0;
 	
 	    this.interval = setInterval(function () {
 	      if (currentNote < roll.length) {
