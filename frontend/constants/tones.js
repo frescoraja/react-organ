@@ -12,10 +12,10 @@ const TONES = {
   As: 29.14,
   B: 30.87,
   C1: 32.71
-}
+};
 
-function getKeyFreq(key, octave) {
+const getKeyFreq = function(key, octave) {
   return TONES[key] * Math.pow(2, octave);
-}
+};
 
 module.exports = { TONES, getKeyFreq };

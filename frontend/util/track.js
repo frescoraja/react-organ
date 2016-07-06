@@ -1,5 +1,6 @@
 const $ = require('jquery');
 const KeyActions = require('../actions/key_actions');
+const TrackActions = require('../actions/track_actions');
 
 const Track = function(attrs) {
   const defaults = {

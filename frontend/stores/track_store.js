@@ -31,7 +31,7 @@ TrackStore._addTrack = function(track) {
 };
 
 TrackStore._resetTracks = function(tracks) {
-  tracks = tracks.slice();
+  _tracks = tracks.slice();
   this.__emitChange();
 };
 
@@ -40,7 +40,6 @@ TrackStore._deleteTrack = function(id) {
   for(let i = 0; i < _tracks.length; i++) {
     if(_tracks[i].attributes.id === id) idx = i;
   }
-
   _tracks.splice(idx, 1);
   this.__emitChange();
 };

@@ -4,6 +4,7 @@ const TONES = require('../constants/tones').TONES;
 const NoteKey = require('./note_key');
 const AddKeyListeners = require('../util/add_key_listeners');
 const Recorder = require('./recorder');
+const JukeBox = require('./juke_box');
 
 const Organ = React.createClass({
   getInitialState() {
@@ -40,6 +41,7 @@ const Organ = React.createClass({
           }
         </div>
         <Recorder />
+        <JukeBox />
       </div>
     );
   }
