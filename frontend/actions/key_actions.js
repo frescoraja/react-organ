@@ -1,27 +1,22 @@
-const AppDispatcher = require('../dispatcher/dispatcher');
-const OrganConstants = require('../constants/organ_constants');
+import { OrganConstants } from '../constants/organ_constants';
 
-const KeyActions = {
-  groupUpdate(notes) {
-    AppDispatcher.dispatch({
-      actionType: OrganConstants.GROUP_UPDATE,
-      notes
-    });
-  },
-
-  keyPressed(note) {
-    AppDispatcher.dispatch({
-      actionType: OrganConstants.KEY_PRESSED,
-      note: note
-    });
-  },
-
-  keyReleased(note) {
-    AppDispatcher.dispatch({
-      actionType: OrganConstants.KEY_RELEASED,
-      note: note
-    });
+export const groupUpdate = notes => {
+  return {
+    type: OrganConstants.GROUP_UPDATE,
+    notes
   }
-};
+}
 
-module.exports = KeyActions;
+export const keyPressed = note => {
+  return {
+    type: OrganConstants.KEY_PRESSED,
+    note
+  }
+}
+
+export const keyReleased = note => {
+  return {
+    type: OrganConstants.KEY_RELEASED,
+    note
+  }
+}

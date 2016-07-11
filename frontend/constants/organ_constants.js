@@ -8,6 +8,6 @@ const OrganConstants = {
   ADD_TRACK: "ADD_TRACK",
   RESET_TRACKS: "RESET_TRACKS",
   DELETE_TRACK: "DELETE_TRACK"
-};
+}
 
-module.exports = OrganConstants;
+export default OrganConstants

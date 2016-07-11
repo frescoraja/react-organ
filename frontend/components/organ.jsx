@@ -1,6 +1,6 @@
 const React = require('react');
 const KeyStore = require('../stores/key_store');
-const TONES = require('../constants/tones').TONES;
+import { TONES } from '../constants/tones'
 const NoteKey = require('./note_key');
 const AddKeyListeners = require('../util/add_key_listeners');
 const Recorder = require('./recorder');
@@ -47,4 +47,4 @@ const Organ = React.createClass({
   }
 });
 
-module.exports = Organ;
+export default Organ;

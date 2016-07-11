@@ -1,4 +1,4 @@
-const TONES = {
+export const TONES = {
   C: 16.35,
   Cs: 17.32,
   D: 18.35,
@@ -14,8 +14,7 @@ const TONES = {
   C1: 32.71
 };
 
-const getKeyFreq = function(key, octave) {
+export const getKeyFreq = function(key, octave) {
   return TONES[key] * Math.pow(2, octave);
 };
 
-module.exports = { TONES, getKeyFreq };

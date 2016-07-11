@@ -1,6 +1,6 @@
 const $ = require('jquery');
-const KeyActions = require('../actions/key_actions');
-const TONES = require('../constants/tones').TONES;
+import { TONES } from '../constants/tones'
+import { keyPressed, keyReleased } from '../actions'
 
 const NOTE_MAP = {};
 const tones = Object.keys(TONES);
@@ -26,13 +26,13 @@ tones.forEach((tone, i) => {
 
 const _heldKeys = [];
 
-module.exports = function() {
+const AddKeyListeners = function() {
   $(document).on('keydown', (e) => {
     const code = e.keyCode;
     const valid = validKeys.indexOf(code) !== -1;
     if (_heldKeys.indexOf(code) === -1 && valid) {
       _heldKeys.push(code);
-      KeyActions.keyPressed(NOTE_MAP[code]);
+      dispatch(keyPressed(NOTE_MAP[code]))
     }
   });
   
@@ -41,7 +41,9 @@ module.exports = function() {
     const idx = _heldKeys.indexOf(code);
     if (idx !== -1) {
       _heldKeys.splice(idx, 1);
-      KeyActions.keyReleased(NOTE_MAP[code]);
+      dispatch(keyReleased(NOTE_MAP[code]));
     }
   });
 };
+
+export default AddKeyListeners

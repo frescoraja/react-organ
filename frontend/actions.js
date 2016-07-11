@@ -1,6 +1,6 @@
 const $ = require('jquery')
 import fetch from 'isomorphic-fetch'
-import OrganConstants from '../constants/organ_constants'
+import OrganConstants from './constants/organ_constants'
 
 export const addTrack = (track) => {
 	return {

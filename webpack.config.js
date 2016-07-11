@@ -4,7 +4,7 @@ var path = require("path");
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/react-organ.jsx",
+  entry: ['babel-polyfill', "./frontend/react-organ.jsx"],
   output: {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js",
