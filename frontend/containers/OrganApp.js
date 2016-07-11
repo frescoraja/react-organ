@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { TONES } from '../constants/tones'
-import AddKeyListeners from '../util/add_key_listener'
+import AddKeyListeners from '../util/add_key_listeners'
 
 
 

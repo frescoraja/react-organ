@@ -58,7 +58,7 @@ export const destroyTrack = id => {
 			url: `/api/tracks/${id}`,
 			method: 'DELETE',
 			dataType: 'json',
-			beforeSend(xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')) }.
+			beforeSend(xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')) },
 			success(track) {
 				dispatch(deleteTrack(track.id))
 			}

@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux'
-import OrganConstants from '../constants/organ_constants'
+import { combineReducers } from 'react-redux'
+import OrganConstants from './constants/organ_constants'
 
 function tracks(state = [], action) {
 	switch (action.type) {
@@ -33,8 +33,7 @@ function tracks(state = [], action) {
 function keys(state = [], action) {
 	switch(action.type) {
 		case OrganConstants.KEY_PRESSED:
-			const idx = state.indexOf(action.note);
-			if (idx === -1) {
+			if (state.indexOf(action.note) === -1) {
 				return [
 					...state,
 					action.note
